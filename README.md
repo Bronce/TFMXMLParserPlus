@@ -19,5 +19,5 @@ http://api.micetigri.fr/maps/search/p(PERMHERE)?page=2&sort=id&direction=asc
 http://api.micetigri.fr/maps/search/p(PERMHERE)?page=3&sort=id&direction=asc
 
 Special thanks to devsaider
-Base: https://github.com/devsaider/TFMXMLParser
+# Base: https://github.com/devsaider/TFMXMLParser
 # Transformice XML Parser with some extra functions
