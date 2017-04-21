@@ -4,12 +4,10 @@
  * and open the template in the editor.
  */
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Base64;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  *
@@ -194,10 +192,16 @@ public class XMLParser extends javax.swing.JFrame {
         this.jComboBox1.setEnabled(false);
         this.jTextField1.setEnabled(false);
         this.jCheckBox3.setEnabled(false);
+        this.jCheckBox2.setEnabled(false);
+        this.jCheckBox1.setEnabled(false);
         this.jLabel1.setEnabled(false);
         this.jLabel2.setEnabled(false);
         this.jLabel3.setEnabled(false);
         this.jSpinner1.setEnabled(false);
+        BootID = 0;
+        BootPgCount = 0;
+        BootInfos = "";
+        BootCodes = "";
         if (!this.jCheckBox1.isSelected()){
             iCode = Integer.valueOf(this.jTextField1.getText());
             this.Start(1);
@@ -320,7 +324,7 @@ public class XMLParser extends javax.swing.JFrame {
                     }catch (Exception error){
                         MapCode = "";
                     }
-                    if (StringUtils.isNumeric(MapCode)){
+                    if (MapCode.startsWith("0") || MapCode.startsWith("1") || MapCode.startsWith("2") || MapCode.startsWith("3") || MapCode.startsWith("4") || MapCode.startsWith("5") || MapCode.startsWith("6") || MapCode.startsWith("7") || MapCode.startsWith("8") || MapCode.startsWith("9")){
                         URL url = new URL("http://api.micetigri.fr/maps/xmlnew/" + MapCode);
                         URLConnection connection = url.openConnection();
                         connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.29 Safari/537.36");
@@ -415,12 +419,15 @@ public class XMLParser extends javax.swing.JFrame {
                                     .append(xml)
                                     .append("'\n")
                                     .toString());
+                        }else{
+                            this.jTextPane1.setText("xml not found !");
                         }
                     }
                     this.jButton1.setEnabled(true);
                     this.jLabel3.setEnabled(true);
                     this.jTextField1.setEnabled(true);
                     this.jCheckBox1.setEnabled(true);
+                    this.jCheckBox2.setEnabled(false);
                     this.jButton1.setText("START");
                     
                 } catch (Exception error) {
