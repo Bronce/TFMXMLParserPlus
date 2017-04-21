@@ -194,8 +194,6 @@ public class XMLParser extends javax.swing.JFrame {
         this.jComboBox1.setEnabled(false);
         this.jTextField1.setEnabled(false);
         this.jCheckBox3.setEnabled(false);
-        this.jCheckBox2.setEnabled(false);
-        this.jCheckBox1.setEnabled(false);
         this.jLabel1.setEnabled(false);
         this.jLabel2.setEnabled(false);
         this.jLabel3.setEnabled(false);
@@ -417,15 +415,12 @@ public class XMLParser extends javax.swing.JFrame {
                                     .append(xml)
                                     .append("'\n")
                                     .toString());
-                        }else{
-                            this.jTextPane1.setText("xml not found !");
                         }
                     }
                     this.jButton1.setEnabled(true);
                     this.jLabel3.setEnabled(true);
                     this.jTextField1.setEnabled(true);
                     this.jCheckBox1.setEnabled(true);
-                    this.jCheckBox2.setEnabled(false);
                     this.jButton1.setText("START");
                     
                 } catch (Exception error) {
